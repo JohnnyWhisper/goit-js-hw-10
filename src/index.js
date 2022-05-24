@@ -27,16 +27,16 @@ function onCountryInput() {
         } else if (country.length >= 10) {
             ManyMatches();
         } else {
-            countryList.insertAdjacentHTML('beforeend', markupCountryInfo(country));
+            countryList.insertAdjacentHTML('beforeend', markupCountryList(country));
         }
-    }).catch(WrongName);
+    }).catch(wrongName);
 }
 
 function ManyMatches() {
   Notiflix.Notify.info('Too many matches found. Please enter a more specific name.');
 }
 
-function WrongNamet() {
+function wrongName() {
   Notiflix.Notify.failure('Oops, there is no country with that name');
 }
 
